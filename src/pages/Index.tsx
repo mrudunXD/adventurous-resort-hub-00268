@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import Hero from '@/components/Hero';
+import { Sprout, Shield, TrendingUp, ArrowRight } from 'lucide-react';
 import FeaturedActivities from '@/components/FeaturedActivities';
 import SpecialOffers from '@/components/SpecialOffers';
 import HomeGallery from '@/components/HomeGallery';
@@ -13,13 +11,52 @@ import { ArrowRight, Leaf, Shield, Award, Phone } from 'lucide-react';
 import { AdPopup } from '@/components/AdPopup';
 
 const Index: React.FC = () => {
-  return <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <AdPopup />
+  return <div className="min-h-screen bg-gradient-to-br from-primary/10 via-accent/5 to-background">
+      <nav className="bg-white/80 backdrop-blur-sm border-b sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Sprout className="w-8 h-8 text-primary" />
+            <span className="text-2xl font-bold text-primary">AgriShield</span>
+          </div>
+          <Link to="/onboarding">
+            <Button className="bg-primary hover:bg-primary/90">Get Started</Button>
+          </Link>
+        </div>
+      </nav>
       
-      <main className="flex-grow">
-        <Hero />
+      <main className="flex-grow container mx-auto px-4 py-16">
+        <div className="text-center max-w-4xl mx-auto mb-16 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6">
+            Grow Smarter. Sell Safer.
+          </h1>
+          <p className="text-xl text-muted-foreground mb-8">
+            AI-powered yield optimization and price hedging platform for India's oilseed farmers
+          </p>
+          <Link to="/onboarding">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8 py-6">
+              Start Your Journey <ArrowRight className="ml-2" />
+            </Button>
+          </Link>
+        </div>
         
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="p-6 bg-white rounded-xl shadow-lg hover-lift">
+            <Sprout className="w-12 h-12 text-primary mb-4" />
+            <h3 className="text-xl font-bold mb-2">Smart Yield Intelligence</h3>
+            <p className="text-muted-foreground">AI predictions, weather alerts, and personalized crop advisories</p>
+          </div>
+          <div className="p-6 bg-white rounded-xl shadow-lg hover-lift">
+            <TrendingUp className="w-12 h-12 text-primary mb-4" />
+            <h3 className="text-xl font-bold mb-2">Price Forecasting</h3>
+            <p className="text-muted-foreground">30 & 90-day market outlooks with AI insights</p>
+          </div>
+          <div className="p-6 bg-white rounded-xl shadow-lg hover-lift">
+            <Shield className="w-12 h-12 text-primary mb-4" />
+            <h3 className="text-xl font-bold mb-2">Virtual Hedging</h3>
+            <p className="text-muted-foreground">Lock prices and protect income with forward contracts</p>
+          </div>
+        </div>
+
         {/* Call Now Button - repositioned above chatbot with more space */}
         <div className="fixed bottom-32 right-4 z-40 md:bottom-24">
           <a 
