@@ -21,9 +21,9 @@ const Index: React.FC = () => {
               About
             </Link>
             <ThemeToggle />
-            <a href="/api/login">
-              <Button className="bg-primary hover:bg-primary/90" size="sm">Login with Google</Button>
-            </a>
+            <Link to="/login">
+              <Button className="bg-primary hover:bg-primary/90" size="sm">Login</Button>
+            </Link>
           </div>
         </div>
       </nav>
@@ -41,11 +41,11 @@ const Index: React.FC = () => {
           <p className="text-xl text-white/90 mb-8 drop-shadow-md">
             AI-powered yield optimization and price hedging platform for India's oilseed farmers
           </p>
-          <a href="/api/login">
+          <Link to="/login">
             <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6 shadow-xl">
               Start Your Journey <ArrowRight className="ml-2" />
             </Button>
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -80,11 +80,11 @@ const Index: React.FC = () => {
               <p className="text-xl mb-8 text-white/90">
                 Join thousands of farmers who are already using AgriShield to optimize yields and protect their income.
               </p>
-              <a href="/api/login">
+              <Link to="/login">
                 <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-4 shadow-xl">
                   Get Started Today <ArrowRight className="ml-2" />
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         </section>

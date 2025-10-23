@@ -1,16 +1,11 @@
-// Replit Auth integration - hook to check if user is logged in
-import { useQuery } from "@tanstack/react-query";
-import type { User } from "@shared/schema";
-
+// Simple auth hook - can be extended with your own authentication logic
 export function useAuth() {
-  const { data: user, isLoading } = useQuery<User>({
-    queryKey: ["/api/auth/user"],
-    retry: false,
-  });
-
+  // For now, returning not authenticated to show the login page
+  // You can add your own authentication logic here (localStorage, context, etc.)
+  
   return {
-    user,
-    isLoading,
-    isAuthenticated: !!user,
+    user: null,
+    isLoading: false,
+    isAuthenticated: false,
   };
 }
