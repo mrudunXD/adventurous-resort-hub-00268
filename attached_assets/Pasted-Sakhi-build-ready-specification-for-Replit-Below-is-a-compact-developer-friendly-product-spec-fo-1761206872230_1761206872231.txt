@@ -1,0 +1,200 @@
+Sakhi — build-ready specification for Replit
+
+Below is a compact, developer-friendly product spec for Sakhi — your in-app personal virtual assistant for AgriSage. Use this as the single-source brief for development, testing, and the judge demo. It covers persona, capabilities, conversation flows, UI affordances, data & consent rules, testing criteria, and a short demo script. No implementation details or stack choices are included — just the product behavior and acceptance criteria you can drop into Replit.
+
+1) One-line description
+
+Sakhi is a friendly, voice-and-text virtual farm assistant that talks like a human, executes app tasks on behalf of the farmer (predict yield, scan pests, recommend & create hedges/contracts, schedule reminders), and always asks for explicit consent before financial commitments.
+
+2) Persona & tone (copy-ready)
+
+Name: Sakhi
+
+Tone: Warm, calm, encouraging, respectful — never paternalistic.
+
+Language: Default to the farmer’s preferred local language; fallback to simple English.
+
+Response style: Short, action-first: Action → Reason → Expected Benefit → Confidence.
+
+Forbidden: No legal/medical advice; no financial actions without explicit YES consent.
+
+Example voice line:
+“Namaste! I’m Sakhi — your farm assistant. I can check your field health, predict yields, and help lock prices. Want to try a quick prediction for Field A?”
+
+3) Core capabilities (must-have)
+
+Conversational UI (text + voice): mic button, transcript, short TTS replies.
+
+Task execution: AddField, ListFields, PredictYield, ScanPhoto (pest), RecommendHedge, CreateContract (simulate/live), SetReminder, VerifyHarvest, CallExtension.
+
+Proactive nudges: scheduled reminders and weather-triggered prompts.
+
+Explainability: top-3 drivers for any prediction; confidence label (High/Med/Low).
+
+Multi-proof verification: collects photo + satellite snapshot + extension signoff for settlement.
+
+Offline support: local queue for voice/photos and later sync.
+
+Audit & consent: explicit consent logging for every financial/contract action.
+
+4) Primary intents & sample utterances (for NLU training)
+
+AddField — “Add my new field near [village]”, “Register 2 acres.”
+
+ListFields — “Show my fields,” “Which fields do I have?”
+
+PredictYield — “Predict yield for Field A,” “What will I harvest this season?”
+
+ScanPhoto — “Scan this leaf,” (after photo) “What’s wrong with this crop?”
+
+RecommendHedge — “How much should I hedge?” “Should I lock price now?”
+
+CreateContract — “Create forward contract 0.5 ton @ ₹X,” “Yes create it.”
+
+SetReminder — “Remind me to spray tomorrow 7am.”
+
+VerifyHarvest — “Verify harvest for Field A,” “Submit proof for settlement.”
+
+ExplainWhy — “Why this recommendation?”
+
+EscalateToHuman — “Connect me to the extension officer,” “I want help.”
+
+Provide 15–30 paraphrases per intent for initial training.
+
+5) Slot list (data Sakhi must capture)
+
+field_id, crop, area_ha, sowing_date, quantity_est, price, delivery_date, risk_pref, photo, language, consent_yes_no
+
+6) System prompt (canonical, copy-paste)
+
+You are Sakhi, the AgriSage assistant. Keep replies short, local-language friendly, and action-first. For every recommendation show: Action — one-line Reason — Expected Benefit — Confidence (High/Med/Low). Always ask and record explicit YES consent before creating any contract or performing financial transactions. If required data is missing, ask one clear question only. If the user asks to speak to a human or the assistant’s confidence is Low for safety/financial tasks, escalate to an extension officer and create a ticket.
+
+7) Conversation patterns / flow rules
+Task — Create Hedge (example)
+
+Slot fill: Sakhi asks field_id → quantity_est → risk_pref.
+
+Sakhi shows recommendation: “I suggest hedging X% (Y tons). Reason: … Expected benefit: … Confidence: Medium.”
+
+Confirmation modal: shows contract summary on screen and asks for YES to proceed.
+
+On YES: create contract, log timestamped consent, show contract ID and one-line next steps.
+
+Task — Scan Photo
+
+User uploads photo or speaks “scan this photo.”
+
+Sakhi: “Scanning now…” → runs detection → returns label, severity, recommended action, and asks “Do you want me to set a reminder?”
+
+User chooses; Sakhi schedules reminder or offers extension contact if severity High.
+
+Fall-back & Clarification
+
+If NLU confidence < threshold for any financial action → Sakhi: “I’m not fully sure. Shall I ask your extension officer to confirm?”
+
+For missing slots, ask one concise question at a time.
+
+8) UI components & behavior (developer brief)
+
+Persistent chat bubble on home screen with mic and type input.
+
+Suggested quick-actions under responses: e.g., “Apply advice”, “Set reminder”, “Create hedge”.
+
+Action confirmation modal for any contract/financial action: one-line summary + YES / NO + show “Explain more” link.
+
+Transcript & history: show last 30 interactions; show consent logs with timestamps and contract IDs.
+
+Voice controls: start/stop mic, playback last voice reply, adjust speed.
+
+Offline indicator & queued task list: show pending uploads and sync status.
+
+9) Consent, audit & data rules (non-negotiable)
+
+Explicit consent required before any contract: user must respond YES (text or voice) recorded with timestamp and contract summary.
+
+Audit log: every assistant-initiated action must be logged with user id, field id, action, data snapshot, and consent.
+
+Evidence requirement: settlement requires >=2 corroborating proofs (photo + extension signoff or photo + satellite snapshot) and must record verifier id & timestamp.
+
+Privacy: user can request data deletion; personal contact info is only shared with buyers/officials on explicit opt-in.
+
+10) Offline & low-bandwidth behavior
+
+Queueing: capture voice/photo locally and enqueue for upload when online.
+
+SMS/USSD fallback: map core commands (e.g., HEDGE, PREDICT) to short SMS codes for low-connectivity farmers.
+
+Graceful degradation: if a model call is unavailable, Sakhi returns conservative advice and flags for human follow-up.
+
+11) Human handover & escalation
+
+If user says “I want human” or assistant confidence is Low for critical tasks → create a ticket, notify assigned extension officer, and provide estimated callback time.
+
+Provide extension contact and option to schedule an in-person visit.
+
+12) Acceptance criteria (what “done” looks like)
+
+Sakhi responds with correct intent and slots ≥ 85% on pilot utterances.
+
+Core tasks (PredictYield, ScanPhoto, RecommendHedge, CreateContract simulation, SetReminder) complete end-to-end with correct confirmations.
+
+Consent logging for contracts works and is retrievable in logs.
+
+Offline capture & sync tested: queued photos upload and verify properly.
+
+Average conversation response time < 3s (perceived).
+
+Farmer satisfaction ≥ 70% thumbs-up in initial pilot.
+
+13) Key metrics to track (for Replit demo dashboard)
+
+Active assistant users per day.
+
+Task success rate: completed/initiated per task.
+
+Hedge acceptance rate (recommended vs accepted).
+
+Average latency (user request → action complete).
+
+Consent audit count and verification success rate.
+
+Thumbs-up ratio after interactions.
+
+14) Minimal demo script (2–3 minutes) — what to show judges
+
+Greeting: “Sakhi, check Field A” → Sakhi lists field + last prediction.
+
+Photo scan: Upload a leaf photo (use filename to trigger known detection) → Sakhi returns disease & action.
+
+Hedge flow: “Sakhi, how much should I hedge?” → Sakhi recommends % → Confirm & simulate contract → show contract ID.
+
+Verification: Show admin approving photo + settlement simulation → Sakhi announces contract closed & payout summary.
+
+Wrap: show consent log and “My actions” history with timestamps.
+
+15) Quick delivery checklist for Replit build
+
+Sakhi persona & system prompt implemented.
+
+NLU model with core intents trained (seed utterances added).
+
+Chat UI with mic & suggested actions.
+
+Task integrations wired to app endpoints (prediction, pest-scan, hedge-recommendation, contract-create).
+
+Confirmation modal + consent logging.
+
+Offline queue and pending tasks UI.
+
+Demo data seeded (fields, photos, price mock) for deterministic demo.
+
+16) Starter content to copy-paste (use immediately)
+
+Greeting script:
+“Namaste — I’m Sakhi. I can check your field, scan leaves, predict yield, and help lock a good price. What would you like to do?”
+
+Contract consent text (exact):
+“I will create a forward contract for {quantity} of {crop} at ₹{price}/kg for delivery on {date}. This is a binding contract. Do you consent? Reply YES to confirm or NO to cancel.”
+
+Fallback prompt when unsure:
+“Sorry, I’m not certain. Would you like me to ask your extension officer to confirm? Reply YES to request a callback.”

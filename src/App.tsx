@@ -8,6 +8,7 @@ import { queryClient } from "@/lib/queryClient";
 import { useAuth } from "@/hooks/useAuth";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
+import Sakhi from "./pages/Sakhi";
 import NotFound from "./pages/NotFound";
 import Onboarding from "./pages/Onboarding";
 import Dashboard from "./pages/Dashboard";
@@ -42,6 +43,7 @@ const Router = () => {
         <>
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/sakhi" element={<Sakhi />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </>
@@ -49,6 +51,7 @@ const Router = () => {
         <>
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/about" element={<About />} />
+          <Route path="/sakhi" element={<Sakhi />} />
           <Route element={<AppLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/yield-intelligence" element={<YieldIntelligence />} />
