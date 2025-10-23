@@ -1,14 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Sprout, Shield, TrendingUp, ArrowRight } from 'lucide-react';
-import FeaturedActivities from '@/components/FeaturedActivities';
-import SpecialOffers from '@/components/SpecialOffers';
-import HomeGallery from '@/components/HomeGallery';
-import NearbyAttractions from '@/components/NearbyAttractions';
-import DiscountOffers from '@/components/DiscountOffers';
-import { ArrowRight, Leaf, Shield, Award, Phone } from 'lucide-react';
-import { AdPopup } from '@/components/AdPopup';
+import { Sprout, Shield, TrendingUp, ArrowRight, Leaf, Award, Phone } from 'lucide-react';
+import Footer from '@/components/Footer';
 
 const Index: React.FC = () => {
   return <div className="min-h-screen bg-gradient-to-br from-primary/10 via-accent/5 to-background">
@@ -145,12 +139,6 @@ const Index: React.FC = () => {
           </div>
         </section>
         
-        {/* Discount Offers */}
-        <DiscountOffers />
-        
-        {/* Special Offers Section */}
-        <SpecialOffers />
-        
         {/* Accommodations preview */}
         <section className="py-20 bg-secondary">
           <div className="container px-4">
@@ -214,15 +202,6 @@ const Index: React.FC = () => {
             </div>
           </div>
         </section>
-        
-        {/* Gallery Section */}
-        <HomeGallery />
-        
-        {/* Featured Activities */}
-        <FeaturedActivities />
-        
-        {/* Nearby Attractions Section */}
-        <NearbyAttractions />
         
         {/* Testimonials */}
         <section className="section-padding container">
