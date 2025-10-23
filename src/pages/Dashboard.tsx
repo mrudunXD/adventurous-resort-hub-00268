@@ -17,8 +17,6 @@ import {
   BarChart3,
   Leaf
 } from 'lucide-react';
-import AppLayout from '@/components/AppLayout';
-
 const Dashboard = () => {
   const yieldStatus = { good: 60, moderate: 30, critical: 10 };
   const todayWeather = { temp: 28, rain: 40, condition: 'Partly Cloudy' };
@@ -27,8 +25,7 @@ const Dashboard = () => {
   const hedgeRecommendation = 40;
 
   return (
-    <AppLayout>
-      <div className="space-y-6 animate-fade-in">
+    <div className="space-y-6 animate-fade-in">
         {/* Welcome Section */}
         <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg p-6">
           <h1 className="text-3xl font-bold text-primary mb-2">Welcome back, Farmer! 🌾</h1>

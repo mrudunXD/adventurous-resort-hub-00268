@@ -1,12 +1,9 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
 
-interface AppLayoutProps {
-  children: React.ReactNode;
-}
-
-const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
+const AppLayout: React.FC = () => {
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-background">
@@ -23,7 +20,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
           
           <div className="flex-1 p-6 overflow-auto">
             <div className="max-w-7xl mx-auto">
-              {children}
+              <Outlet />
             </div>
           </div>
         </main>
