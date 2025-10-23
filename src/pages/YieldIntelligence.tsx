@@ -16,7 +16,6 @@ import {
   CheckCircle,
   Leaf
 } from 'lucide-react';
-import AppLayout from '@/components/AppLayout';
 
 const YieldIntelligence = () => {
   const [irrigationLevel, setIrrigationLevel] = useState([60]);
@@ -48,8 +47,7 @@ const YieldIntelligence = () => {
   };
 
   return (
-    <AppLayout>
-      <div className="space-y-6 animate-fade-in">
+    <div className="space-y-6 animate-fade-in">
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold text-primary mb-2">AI Yield Intelligence</h1>
@@ -363,7 +361,6 @@ const YieldIntelligence = () => {
           </TabsContent>
         </Tabs>
       </div>
-    </AppLayout>
   );
 };
 

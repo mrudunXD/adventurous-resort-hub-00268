@@ -3,7 +3,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TrendingUp, TrendingDown, BarChart3, Globe, Info, MapPin } from 'lucide-react';
-import AppLayout from '@/components/AppLayout';
 
 const MarketForecast = () => {
   const priceData = [
@@ -24,8 +23,7 @@ const MarketForecast = () => {
   ];
 
   return (
-    <AppLayout>
-      <div className="space-y-6 animate-fade-in">
+    <div className="space-y-6 animate-fade-in">
         <div>
           <h1 className="text-3xl font-bold text-primary mb-2">Market & Price Forecast</h1>
           <p className="text-muted-foreground">Live prices and AI-powered predictions for informed decisions</p>
@@ -316,7 +314,6 @@ const MarketForecast = () => {
           </TabsContent>
         </Tabs>
       </div>
-    </AppLayout>
   );
 };
 

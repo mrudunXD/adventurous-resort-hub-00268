@@ -264,7 +264,6 @@ const Dashboard = () => {
           </CardContent>
         </Card>
       </div>
-    </AppLayout>
   );
 };
 

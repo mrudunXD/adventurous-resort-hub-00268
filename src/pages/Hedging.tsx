@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Slider } from "@/components/ui/slider";
 import { Shield, TrendingUp, FileText, CheckCircle, AlertCircle } from 'lucide-react';
-import AppLayout from '@/components/AppLayout';
 import { toast } from "@/hooks/use-toast";
 
 const Hedging = () => {
@@ -26,8 +25,7 @@ const Hedging = () => {
   };
 
   return (
-    <AppLayout>
-      <div className="space-y-6 animate-fade-in">
+    <div className="space-y-6 animate-fade-in">
         <div>
           <h1 className="text-3xl font-bold text-primary mb-2">Smart Hedging Hub</h1>
           <p className="text-muted-foreground">Protect your income with virtual forward contracts</p>
@@ -145,9 +143,8 @@ const Hedging = () => {
               </CardContent>
             </Card>
           </div>
-        </div>
       </div>
-    </AppLayout>
+    </div>
   );
 };
 
