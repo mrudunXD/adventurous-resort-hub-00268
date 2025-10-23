@@ -17,20 +17,32 @@ export async function setupVite(app: Express, server: any) {
 
   app.use(vite.middlewares);
 
-  app.use("*", async (req, res, next) => {
+  // Catch-all route for SPA - serve index.html for all non-API routes
+  app.use((req, res, next) => {
+    // Skip API routes
+    if (req.originalUrl.startsWith('/api/')) {
+      return next();
+    }
+
     const url = req.originalUrl;
 
-    try {
-      let template = fs.readFileSync(
-        path.resolve(__dirname, "..", "index.html"),
-        "utf-8"
-      );
+    fs.readFile(
+      path.resolve(__dirname, "..", "index.html"),
+      "utf-8",
+      async (err, data) => {
+        if (err) {
+          vite.ssrFixStacktrace(err);
+          return next(err);
+        }
 
-      template = await vite.transformIndexHtml(url, template);
-      res.status(200).set({ "Content-Type": "text/html" }).end(template);
-    } catch (e) {
-      vite.ssrFixStacktrace(e as Error);
-      next(e);
-    }
+        try {
+          const template = await vite.transformIndexHtml(url, data);
+          res.status(200).set({ "Content-Type": "text/html" }).end(template);
+        } catch (e) {
+          vite.ssrFixStacktrace(e as Error);
+          next(e);
+        }
+      }
+    );
   });
 }
