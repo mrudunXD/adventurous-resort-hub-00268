@@ -1,5 +1,9 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { Languages } from "lucide-react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useAuth } from "@/hooks/useAuth";
+import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -30,14 +34,39 @@ const languages: Language[] = [
 ];
 
 const LanguageSelector = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState("en");
-
+  const { user } = useAuth();
+  const { toast } = useToast();
+  const queryClient = useQueryClient();
+  
+  const selectedLanguage = user?.preferredLanguage || "en";
   const currentLanguage = languages.find((l) => l.code === selectedLanguage);
 
+  const mutation = useMutation({
+    mutationFn: async (language: string) => {
+      return apiRequest("/api/user/language", {
+        method: "POST",
+        body: JSON.stringify({ language }),
+      });
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/auth/user"] });
+      toast({
+        title: "Language Updated",
+        description: "Your language preference has been saved.",
+      });
+    },
+    onError: (error) => {
+      toast({
+        title: "Error",
+        description: "Failed to update language preference.",
+        variant: "destructive",
+      });
+      console.error("Error updating language:", error);
+    },
+  });
+
   const handleLanguageChange = (code: string) => {
-    setSelectedLanguage(code);
-    // In a real app, this would trigger translation/localization
-    console.log(`Language changed to: ${code}`);
+    mutation.mutate(code);
   };
 
   return (

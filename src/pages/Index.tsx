@@ -14,16 +14,16 @@ const Index: React.FC = () => {
             <span className="text-2xl font-bold text-primary">AgriShield</span>
           </div>
           <div className="flex items-center gap-4">
+            <a href="#features" className="text-sm font-medium hover:text-primary transition-colors">
+              Features
+            </a>
             <Link to="/about" className="text-sm font-medium hover:text-primary transition-colors">
               About
             </Link>
             <ThemeToggle />
-            <Link to="/onboarding">
-              <Button variant="outline" size="sm">Login</Button>
-            </Link>
-            <Link to="/onboarding">
-              <Button className="bg-primary hover:bg-primary/90" size="sm">Sign Up</Button>
-            </Link>
+            <a href="/api/login">
+              <Button className="bg-primary hover:bg-primary/90" size="sm">Login with Google</Button>
+            </a>
           </div>
         </div>
       </nav>
@@ -41,17 +41,17 @@ const Index: React.FC = () => {
           <p className="text-xl text-white/90 mb-8 drop-shadow-md">
             AI-powered yield optimization and price hedging platform for India's oilseed farmers
           </p>
-          <Link to="/onboarding">
+          <a href="/api/login">
             <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6 shadow-xl">
               Start Your Journey <ArrowRight className="ml-2" />
             </Button>
-          </Link>
+          </a>
         </div>
       </section>
 
       <main className="flex-grow container mx-auto px-4 py-16">
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div id="features" className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="p-6 bg-white rounded-xl shadow-lg hover-lift">
             <Sprout className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-xl font-bold mb-2">Smart Yield Intelligence</h3>
@@ -80,11 +80,11 @@ const Index: React.FC = () => {
               <p className="text-xl mb-8 text-white/90">
                 Join thousands of farmers who are already using AgriShield to optimize yields and protect their income.
               </p>
-              <Link to="/onboarding">
+              <a href="/api/login">
                 <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-4 shadow-xl">
                   Get Started Today <ArrowRight className="ml-2" />
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </section>
