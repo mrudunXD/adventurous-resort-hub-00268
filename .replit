@@ -4,6 +4,10 @@ modules = ["nodejs-20"]
 localPort = 5000
 externalPort = 80
 
+[[ports]]
+localPort = 40923
+externalPort = 3000
+
 [agent]
 expertMode = true
 
@@ -30,3 +34,6 @@ waitForPort = 5000
 
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[nix]
+channel = "stable-25_05"

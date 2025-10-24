@@ -1,11 +1,12 @@
-// Simple auth hook - can be extended with your own authentication logic
+import { useContext } from 'react';
+import { AuthContext } from '@/contexts/AuthContext';
+
 export function useAuth() {
-  // For now, returning not authenticated to show the login page
-  // You can add your own authentication logic here (localStorage, context, etc.)
+  const context = useContext(AuthContext);
   
-  return {
-    user: null,
-    isLoading: false,
-    isAuthenticated: false,
-  };
+  if (context === undefined) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  
+  return context;
 }

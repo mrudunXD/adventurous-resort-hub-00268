@@ -14,7 +14,7 @@ import {
 
 const UserProfileDropdown = () => {
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
 
   if (!user) return null;
 
@@ -39,7 +39,8 @@ const UserProfileDropdown = () => {
   };
 
   const handleLogout = () => {
-    window.location.href = "/api/logout";
+    logout();
+    navigate('/');
   };
 
   const handleProfile = () => {

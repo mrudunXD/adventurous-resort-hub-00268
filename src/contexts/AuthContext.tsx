@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect, ReactNode } from 'react';
+import bcrypt from 'bcryptjs';
 
 export interface User {
   id: string;
@@ -74,7 +75,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       return { success: false, message: 'No account found with this email' };
     }
 
-    if (foundUser.password !== password) {
+    const isPasswordValid = await bcrypt.compare(password, foundUser.password);
+    if (!isPasswordValid) {
       return { success: false, message: 'Incorrect password' };
     }
 
@@ -109,10 +111,12 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       return { success: false, message: 'Password must be at least 6 characters long' };
     }
 
+    const hashedPassword = await bcrypt.hash(password, 10);
+
     const newUser: StoredUser = {
       id: crypto.randomUUID(),
       email,
-      password,
+      password: hashedPassword,
       firstName,
       lastName,
       createdAt: new Date().toISOString(),
