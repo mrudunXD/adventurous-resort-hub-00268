@@ -1,0 +1,127 @@
+{
+  "app": {
+    "name": "एग्रीशील्ड",
+    "tagline": "स्मार्ट खेती करें। सुरक्षित बिक्री करें।"
+  },
+  "nav": {
+    "features": "विशेषताएं",
+    "about": "हमारे बारे में",
+    "login": "लॉग इन",
+    "signup": "साइन अप",
+    "dashboard": "डैशबोर्ड",
+    "yieldIntelligence": "उपज बुद्धिमत्ता",
+    "marketForecast": "बाजार पूर्वानुमान",
+    "hedging": "हेजिंग",
+    "contracts": "अनुबंध",
+    "learningCenter": "शिक्षा केंद्र",
+    "profile": "प्रोफ़ाइल"
+  },
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "submit": "जमा करें",
+    "cancel": "रद्द करें",
+    "save": "सहेजें",
+    "delete": "हटाएं",
+    "edit": "संपादित करें",
+    "search": "खोजें",
+    "filter": "फ़िल्टर",
+    "close": "बंद करें",
+    "viewDetails": "विवरण देखें",
+    "getStarted": "शुरू करें",
+    "learnMore": "और जानें"
+  },
+  "landing": {
+    "hero": {
+      "title": "स्मार्ट खेती करें। सुरक्षित बिक्री करें।",
+      "subtitle": "भारत के तिलहन किसानों के लिए AI-संचालित उपज अनुकूलन और मूल्य हेजिंग प्लेटफॉर्म",
+      "cta": "अपनी यात्रा शुरू करें"
+    },
+    "features": {
+      "yieldIntelligence": {
+        "title": "स्मार्ट उपज बुद्धिमत्ता",
+        "description": "AI भविष्यवाणियां, मौसम अलर्ट और व्यक्तिगत फसल सलाह"
+      },
+      "priceForecasting": {
+        "title": "मूल्य पूर्वानुमान",
+        "description": "AI अंतर्दृष्टि के साथ 30 और 90 दिन का बाजार दृष्टिकोण"
+      },
+      "virtualHedging": {
+        "title": "वर्चुअल हेजिंग",
+        "description": "आगे के अनुबंधों के साथ मूल्य लॉक करें और आय की रक्षा करें"
+      }
+    },
+    "cta": {
+      "title": "अपनी खेती को बदलने के लिए तैयार हैं?",
+      "description": "हजारों किसानों में शामिल हों जो पहले से ही उपज को अनुकूलित करने और अपनी आय की रक्षा करने के लिए एग्रीशील्ड का उपयोग कर रहे हैं।",
+      "button": "आज ही शुरू करें"
+    }
+  },
+  "dashboard": {
+    "welcome": "वापसी पर स्वागत है, किसान!",
+    "welcomeDescription": "आज आपके खेत में क्या हो रहा है",
+    "yieldPotential": "उपज क्षमता",
+    "yieldTarget": "लक्ष्य उपज का",
+    "currentPrice": "वर्तमान मूल्य",
+    "priceChange": "पिछले सप्ताह से",
+    "weather": "मौसम",
+    "hedgeStatus": "हेज स्थिति",
+    "recommendedHedge": "अनुशंसित हेज",
+    "yieldIntelligenceTitle": "स्मार्ट उपज बुद्धिमत्ता",
+    "yieldIntelligenceDesc": "वास्तविक समय फसल स्वास्थ्य विश्लेषण",
+    "goodPlots": "अच्छे प्लॉट",
+    "moderatePlots": "मध्यम प्लॉट",
+    "criticalPlots": "गंभीर प्लॉट",
+    "todayAdvisories": "आज की सलाह",
+    "irrigationRecommended": "प्लॉट A के लिए सिंचाई की सिफारिश - मिट्टी की नमी 40% पर",
+    "pestRiskHigh": "कीट जोखिम अधिक - पूर्वी क्षेत्र में निवारक उपाय लागू करें",
+    "marketForecastTitle": "बाजार और मूल्य पूर्वानुमान",
+    "marketForecastDesc": "30-दिन का मूल्य दृष्टिकोण",
+    "currentMandiPrice": "वर्तमान मंडी मूल्य",
+    "trendingUp": "बढ़ रहा है",
+    "expectedRange": "अपेक्षित रेंज",
+    "nextDays": "अगले 30 दिन",
+    "aiPriceInsights": "AI मूल्य अंतर्दृष्टि",
+    "favorableMonsoon": "अनुकूल मानसून मांग बढ़ा रहा है - कीमतें 5-7% बढ़ने की संभावना",
+    "globalShortage": "वैश्विक सोयाबीन की कमी मध्य सीजन तक कीमतों को बढ़ा सकती है",
+    "smartHedging": "स्मार्ट हेजिंग अनुशंसा",
+    "smartHedgingDesc": "वर्चुअल अनुबंधों के साथ अपनी आय की रक्षा करें",
+    "startHedging": "हेजिंग शुरू करें",
+    "recommendedToHedge": "हेज करने की सिफारिश",
+    "suggestedLockPrice": "सुझाया गया लॉक मूल्य",
+    "untilHarvest": "फसल तक",
+    "whyHedgeNow": "अभी हेज क्यों करें?",
+    "whyHedgeText": "वर्तमान कीमतें अनुकूल हैं, और ₹5,150 पर अपनी अपेक्षित उपज का 40% लॉक करने से बाजार की अस्थिरता के खिलाफ आय स्थिरता मिल सकती है।",
+    "weatherForecast": "7-दिन का मौसम पूर्वानुमान",
+    "days": {
+      "mon": "सोम",
+      "tue": "मंगल",
+      "wed": "बुध",
+      "thu": "गुरु",
+      "fri": "शुक्र",
+      "sat": "शनि",
+      "sun": "रवि"
+    },
+    "good": "अच्छा",
+    "quintal": "क्विंटल"
+  },
+  "language": {
+    "selectLanguage": "भाषा चुनें",
+    "languageUpdated": "भाषा अपडेट की गई",
+    "languageSaved": "आपकी भाषा प्राथमिकता सहेज ली गई है।",
+    "error": "त्रुटि",
+    "errorUpdating": "भाषा प्राथमिकता अपडेट करने में विफल।"
+  },
+  "auth": {
+    "login": "लॉग इन",
+    "signup": "साइन अप",
+    "logout": "लॉग आउट",
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "confirmPassword": "पासवर्ड की पुष्टि करें",
+    "forgotPassword": "पासवर्ड भूल गए?",
+    "dontHaveAccount": "खाता नहीं है?",
+    "alreadyHaveAccount": "पहले से ही एक खाता है?",
+    "signIn": "साइन इन करें",
+    "createAccount": "खाता बनाएं"
+  }
+}

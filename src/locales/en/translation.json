@@ -1,0 +1,127 @@
+{
+  "app": {
+    "name": "AgriShield",
+    "tagline": "Grow Smarter. Sell Safer."
+  },
+  "nav": {
+    "features": "Features",
+    "about": "About",
+    "login": "Login",
+    "signup": "Sign Up",
+    "dashboard": "Dashboard",
+    "yieldIntelligence": "Yield Intelligence",
+    "marketForecast": "Market Forecast",
+    "hedging": "Hedging",
+    "contracts": "Contracts",
+    "learningCenter": "Learning Center",
+    "profile": "Profile"
+  },
+  "common": {
+    "loading": "Loading...",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "filter": "Filter",
+    "close": "Close",
+    "viewDetails": "View Details",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "landing": {
+    "hero": {
+      "title": "Grow Smarter. Sell Safer.",
+      "subtitle": "AI-powered yield optimization and price hedging platform for India's oilseed farmers",
+      "cta": "Start Your Journey"
+    },
+    "features": {
+      "yieldIntelligence": {
+        "title": "Smart Yield Intelligence",
+        "description": "AI predictions, weather alerts, and personalized crop advisories"
+      },
+      "priceForecasting": {
+        "title": "Price Forecasting",
+        "description": "30 & 90-day market outlooks with AI insights"
+      },
+      "virtualHedging": {
+        "title": "Virtual Hedging",
+        "description": "Lock prices and protect income with forward contracts"
+      }
+    },
+    "cta": {
+      "title": "Ready to Transform Your Farming?",
+      "description": "Join thousands of farmers who are already using AgriShield to optimize yields and protect their income.",
+      "button": "Get Started Today"
+    }
+  },
+  "dashboard": {
+    "welcome": "Welcome back, Farmer!",
+    "welcomeDescription": "Here's what's happening with your farm today",
+    "yieldPotential": "Yield Potential",
+    "yieldTarget": "of target yield",
+    "currentPrice": "Current Price",
+    "priceChange": "from last week",
+    "weather": "Weather",
+    "hedgeStatus": "Hedge Status",
+    "recommendedHedge": "Recommended hedge",
+    "yieldIntelligenceTitle": "Smart Yield Intelligence",
+    "yieldIntelligenceDesc": "Real-time crop health analysis",
+    "goodPlots": "Good Plots",
+    "moderatePlots": "Moderate Plots",
+    "criticalPlots": "Critical Plots",
+    "todayAdvisories": "Today's Advisories",
+    "irrigationRecommended": "Irrigation recommended for Plot A - soil moisture at 40%",
+    "pestRiskHigh": "Pest risk high - apply preventive measures in eastern section",
+    "marketForecastTitle": "Market & Price Forecast",
+    "marketForecastDesc": "30-day price outlook",
+    "currentMandiPrice": "Current Mandi Price",
+    "trendingUp": "Trending Up",
+    "expectedRange": "Expected range",
+    "nextDays": "next 30 days",
+    "aiPriceInsights": "AI Price Insights",
+    "favorableMonsoon": "Favorable monsoon increasing demand - prices likely to rise 5-7%",
+    "globalShortage": "Global soybean shortage may push prices up by mid-season",
+    "smartHedging": "Smart Hedging Recommendation",
+    "smartHedgingDesc": "Protect your income with virtual contracts",
+    "startHedging": "Start Hedging",
+    "recommendedToHedge": "Recommended to hedge",
+    "suggestedLockPrice": "Suggested lock price",
+    "untilHarvest": "Until harvest",
+    "whyHedgeNow": "Why hedge now?",
+    "whyHedgeText": "Current prices are favorable, and locking 40% of your expected yield at ₹5,150 can provide income stability against market volatility.",
+    "weatherForecast": "7-Day Weather Forecast",
+    "days": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    },
+    "good": "Good",
+    "quintal": "quintal"
+  },
+  "language": {
+    "selectLanguage": "Select Language",
+    "languageUpdated": "Language Updated",
+    "languageSaved": "Your language preference has been saved.",
+    "error": "Error",
+    "errorUpdating": "Failed to update language preference."
+  },
+  "auth": {
+    "login": "Login",
+    "signup": "Sign Up",
+    "logout": "Logout",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "forgotPassword": "Forgot Password?",
+    "dontHaveAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?",
+    "signIn": "Sign In",
+    "createAccount": "Create Account"
+  }
+}

@@ -2,6 +2,7 @@
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
+import './lib/i18n'
 
 // This ensures the app is mounted to the DOM
 const rootElement = document.getElementById("root");

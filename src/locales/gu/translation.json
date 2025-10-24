@@ -1,0 +1,127 @@
+{
+  "app": {
+    "name": "એગ્રીશીલ્ડ",
+    "tagline": "સ્માર્ટ રીતે ઉગાડો. સુરક્ષિત રીતે વેચો."
+  },
+  "nav": {
+    "features": "સુવિધાઓ",
+    "about": "અમારા વિશે",
+    "login": "લોગિન",
+    "signup": "સાઇન અપ",
+    "dashboard": "ડેશબોર્ડ",
+    "yieldIntelligence": "ઉપજ બુદ્ધિ",
+    "marketForecast": "બજાર આગાહી",
+    "hedging": "હેજિંગ",
+    "contracts": "કરાર",
+    "learningCenter": "શિક્ષણ કેન્દ્ર",
+    "profile": "પ્રોફાઇલ"
+  },
+  "common": {
+    "loading": "લોડ થઈ રહ્યું છે...",
+    "submit": "સબમિટ કરો",
+    "cancel": "રદ કરો",
+    "save": "સાચવો",
+    "delete": "કાઢી નાખો",
+    "edit": "સંપાદિત કરો",
+    "search": "શોધો",
+    "filter": "ફિલ્ટર",
+    "close": "બંધ કરો",
+    "viewDetails": "વિગતો જુઓ",
+    "getStarted": "શરૂ કરો",
+    "learnMore": "વધુ જાણો"
+  },
+  "landing": {
+    "hero": {
+      "title": "સ્માર્ટ રીતે ઉગાડો. સુરક્ષિત રીતે વેચો.",
+      "subtitle": "ભારતના તેલીબિયા ખેડૂતો માટે AI-સંચાલિત ઉપજ ઑપ્ટિમાઇઝેશન અને કિંમત હેજિંગ પ્લેટફોર્મ",
+      "cta": "તમારી યાત્રા શરૂ કરો"
+    },
+    "features": {
+      "yieldIntelligence": {
+        "title": "સ્માર્ટ ઉપજ બુદ્ધિ",
+        "description": "AI આગાહીઓ, હવામાન ચેતવણીઓ અને વ્યક્તિગત પાક સલાહ"
+      },
+      "priceForecasting": {
+        "title": "કિંમત આગાહી",
+        "description": "AI આંતરદૃષ્ટિ સાથે 30 અને 90-દિવસનું બજાર દૃષ્ટિકોણ"
+      },
+      "virtualHedging": {
+        "title": "વર્ચ્યુઅલ હેજિંગ",
+        "description": "ફોરવર્ડ કરાર સાથે કિંમતો લોક કરો અને આવકનું રક્ષણ કરો"
+      }
+    },
+    "cta": {
+      "title": "તમારી ખેતીને પરિવર્તિત કરવા તૈયાર છો?",
+      "description": "હજારો ખેડૂતો સાથે જોડાઓ જેઓ પહેલેથી જ ઉપજને ઑપ્ટિમાઇઝ કરવા અને તેમની આવકનું રક્ષણ કરવા માટે એગ્રીશીલ્ડનો ઉપયોગ કરી રહ્યા છે.",
+      "button": "આજે જ શરૂ કરો"
+    }
+  },
+  "dashboard": {
+    "welcome": "પાછા સ્વાગત છે, ખેડૂત!",
+    "welcomeDescription": "આજે તમારા ખેતરમાં શું થઈ રહ્યું છે",
+    "yieldPotential": "ઉપજ ક્ષમતા",
+    "yieldTarget": "લક્ષ્ય ઉપજનો",
+    "currentPrice": "વર્તમાન કિંમત",
+    "priceChange": "છેલ્લા અઠવાડિયાથી",
+    "weather": "હવામાન",
+    "hedgeStatus": "હેજ સ્થિતિ",
+    "recommendedHedge": "ભલામણ કરેલ હેજ",
+    "yieldIntelligenceTitle": "સ્માર્ટ ઉપજ બુદ્ધિ",
+    "yieldIntelligenceDesc": "રીઅલ-ટાઇમ પાક આરોગ્ય વિશ્લેષણ",
+    "goodPlots": "સારા પ્લોટ",
+    "moderatePlots": "મધ્યમ પ્લોટ",
+    "criticalPlots": "નિર્ણાયક પ્લોટ",
+    "todayAdvisories": "આજની સલાહ",
+    "irrigationRecommended": "પ્લોટ A માટે સિંચાઈની ભલામણ - જમીનની ભેજ 40% પર",
+    "pestRiskHigh": "જીવાતનું જોખમ વધારે - પૂર્વ વિભાગમાં નિવારક પગલાં લાગુ કરો",
+    "marketForecastTitle": "બજાર અને કિંમત આગાહી",
+    "marketForecastDesc": "30-દિવસની કિંમત દૃષ્ટિકોણ",
+    "currentMandiPrice": "વર્તમાન મંડી કિંમત",
+    "trendingUp": "વધી રહ્યું છે",
+    "expectedRange": "અપેક્ષિત રેન્જ",
+    "nextDays": "આગામી 30 દિવસ",
+    "aiPriceInsights": "AI કિંમત આંતરદૃષ્ટિ",
+    "favorableMonsoon": "અનુકૂળ ચોમાસું માંગ વધારી રહ્યું છે - કિંમતો 5-7% વધવાની શક્યતા",
+    "globalShortage": "વૈશ્વિક સોયાબીન અછત મધ્ય-સીઝન સુધી કિંમતો વધારી શકે છે",
+    "smartHedging": "સ્માર્ટ હેજિંગ ભલામણ",
+    "smartHedgingDesc": "વર્ચ્યુઅલ કરાર સાથે તમારી આવકનું રક્ષણ કરો",
+    "startHedging": "હેજિંગ શરૂ કરો",
+    "recommendedToHedge": "હેજ કરવાની ભલામણ",
+    "suggestedLockPrice": "સૂચવેલ લોક કિંમત",
+    "untilHarvest": "લણણી સુધી",
+    "whyHedgeNow": "હવે હેજ શા માટે?",
+    "whyHedgeText": "વર્તમાન કિંમતો અનુકૂળ છે, અને ₹5,150 પર તમારી અપેક્ષિત ઉપજના 40% લોક કરવાથી બજાર અસ્થિરતા સામે આવક સ્થિરતા મળી શકે છે.",
+    "weatherForecast": "7-દિવસની હવામાન આગાહી",
+    "days": {
+      "mon": "સોમ",
+      "tue": "મંગળ",
+      "wed": "બુધ",
+      "thu": "ગુરુ",
+      "fri": "શુક્ર",
+      "sat": "શનિ",
+      "sun": "રવિ"
+    },
+    "good": "સારું",
+    "quintal": "ક્વિન્ટલ"
+  },
+  "language": {
+    "selectLanguage": "ભાષા પસંદ કરો",
+    "languageUpdated": "ભાષા અપડેટ થઈ",
+    "languageSaved": "તમારી ભાષા પસંદગી સાચવવામાં આવી છે.",
+    "error": "ભૂલ",
+    "errorUpdating": "ભાષા પસંદગી અપડેટ કરવામાં નિષ્ફળ."
+  },
+  "auth": {
+    "login": "લોગિન",
+    "signup": "સાઇન અપ",
+    "logout": "લોગ આઉટ",
+    "email": "ઇમેઇલ",
+    "password": "પાસવર્ડ",
+    "confirmPassword": "પાસવર્ડની પુષ્ટિ કરો",
+    "forgotPassword": "પાસવર્ડ ભૂલી ગયા?",
+    "dontHaveAccount": "ખાતું નથી?",
+    "alreadyHaveAccount": "પહેલાથી ખાતું છે?",
+    "signIn": "સાઇન ઇન કરો",
+    "createAccount": "ખાતું બનાવો"
+  }
+}

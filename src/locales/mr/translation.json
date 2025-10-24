@@ -1,0 +1,127 @@
+{
+  "app": {
+    "name": "अॅग्रिशील्ड",
+    "tagline": "स्मार्ट पिकवा. सुरक्षित विक्री करा."
+  },
+  "nav": {
+    "features": "वैशिष्ट्ये",
+    "about": "आमच्याबद्दल",
+    "login": "लॉगिन",
+    "signup": "साइन अप",
+    "dashboard": "डॅशबोर्ड",
+    "yieldIntelligence": "उत्पन्न बुद्धिमत्ता",
+    "marketForecast": "बाजार अंदाज",
+    "hedging": "हेजिंग",
+    "contracts": "करार",
+    "learningCenter": "शिक्षण केंद्र",
+    "profile": "प्रोफाइल"
+  },
+  "common": {
+    "loading": "लोड होत आहे...",
+    "submit": "सबमिट करा",
+    "cancel": "रद्द करा",
+    "save": "जतन करा",
+    "delete": "हटवा",
+    "edit": "संपादन करा",
+    "search": "शोधा",
+    "filter": "फिल्टर",
+    "close": "बंद करा",
+    "viewDetails": "तपशील पहा",
+    "getStarted": "सुरू करा",
+    "learnMore": "अधिक जाणून घ्या"
+  },
+  "landing": {
+    "hero": {
+      "title": "स्मार्ट पिकवा. सुरक्षित विक्री करा.",
+      "subtitle": "भारताच्या तेलबिया शेतकऱ्यांसाठी AI-चालित उत्पादन अनुकूलन आणि किंमत हेजिंग प्लॅटफॉर्म",
+      "cta": "तुमचा प्रवास सुरू करा"
+    },
+    "features": {
+      "yieldIntelligence": {
+        "title": "स्मार्ट उत्पन्न बुद्धिमत्ता",
+        "description": "AI अंदाज, हवामान सूचना आणि वैयक्तिक पीक सल्ले"
+      },
+      "priceForecasting": {
+        "title": "किंमत अंदाज",
+        "description": "AI अंतर्दृष्टीसह 30 आणि 90-दिवसांचे बाजार दृष्टिकोन"
+      },
+      "virtualHedging": {
+        "title": "व्हर्च्युअल हेजिंग",
+        "description": "फॉरवर्ड करारांसह किमती लॉक करा आणि उत्पन्नाचे संरक्षण करा"
+      }
+    },
+    "cta": {
+      "title": "तुमच्या शेतीचे रूपांतर करण्यास तयार आहात?",
+      "description": "उत्पादन अनुकूलित करण्यासाठी आणि त्यांच्या उत्पन्नाचे संरक्षण करण्यासाठी आधीच अॅग्रिशील्ड वापरत असलेल्या हजारो शेतकऱ्यांमध्ये सामील व्हा.",
+      "button": "आजच सुरू करा"
+    }
+  },
+  "dashboard": {
+    "welcome": "परत स्वागत आहे, शेतकरी!",
+    "welcomeDescription": "आज तुमच्या शेतात काय चालले आहे",
+    "yieldPotential": "उत्पन्न क्षमता",
+    "yieldTarget": "लक्ष्य उत्पन्नाचे",
+    "currentPrice": "सध्याची किंमत",
+    "priceChange": "गेल्या आठवड्यापासून",
+    "weather": "हवामान",
+    "hedgeStatus": "हेज स्थिती",
+    "recommendedHedge": "शिफारस केलेले हेज",
+    "yieldIntelligenceTitle": "स्मार्ट उत्पन्न बुद्धिमत्ता",
+    "yieldIntelligenceDesc": "रिअल-टाइम पीक आरोग्य विश्लेषण",
+    "goodPlots": "चांगले भूखंड",
+    "moderatePlots": "मध्यम भूखंड",
+    "criticalPlots": "गंभीर भूखंड",
+    "todayAdvisories": "आजचे सल्ले",
+    "irrigationRecommended": "प्लॉट A साठी सिंचनाची शिफारस - मातीची ओलावा 40% वर",
+    "pestRiskHigh": "कीटकांचा धोका जास्त - पूर्व विभागात प्रतिबंधात्मक उपाय लागू करा",
+    "marketForecastTitle": "बाजार आणि किंमत अंदाज",
+    "marketForecastDesc": "30-दिवसांचा किंमत दृष्टिकोन",
+    "currentMandiPrice": "सध्याची मंडी किंमत",
+    "trendingUp": "वाढत आहे",
+    "expectedRange": "अपेक्षित श्रेणी",
+    "nextDays": "पुढील 30 दिवस",
+    "aiPriceInsights": "AI किंमत अंतर्दृष्टी",
+    "favorableMonsoon": "अनुकूल पाऊस मागणी वाढवत आहे - किमती 5-7% वाढण्याची शक्यता",
+    "globalShortage": "जागतिक सोयाबीन टंचाई मध्य-हंगामापर्यंत किमती वाढवू शकते",
+    "smartHedging": "स्मार्ट हेजिंग शिफारस",
+    "smartHedgingDesc": "व्हर्च्युअल करारांसह तुमच्या उत्पन्नाचे संरक्षण करा",
+    "startHedging": "हेजिंग सुरू करा",
+    "recommendedToHedge": "हेज करण्याची शिफारस",
+    "suggestedLockPrice": "सूचित लॉक किंमत",
+    "untilHarvest": "कापणीपर्यंत",
+    "whyHedgeNow": "आता हेज का करावे?",
+    "whyHedgeText": "सध्याच्या किमती अनुकूल आहेत, आणि ₹5,150 वर तुमच्या अपेक्षित उत्पन्नाच्या 40% लॉक केल्याने बाजार अस्थिरतेविरुद्ध उत्पन्न स्थिरता मिळू शकते.",
+    "weatherForecast": "7-दिवसांचा हवामान अंदाज",
+    "days": {
+      "mon": "सोम",
+      "tue": "मंगळ",
+      "wed": "बुध",
+      "thu": "गुरु",
+      "fri": "शुक्र",
+      "sat": "शनि",
+      "sun": "रवि"
+    },
+    "good": "चांगले",
+    "quintal": "क्विंटल"
+  },
+  "language": {
+    "selectLanguage": "भाषा निवडा",
+    "languageUpdated": "भाषा अद्यतनित केली",
+    "languageSaved": "तुमची भाषा प्राधान्य जतन केली आहे.",
+    "error": "त्रुटी",
+    "errorUpdating": "भाषा प्राधान्य अद्यतनित करण्यात अयशस्वी."
+  },
+  "auth": {
+    "login": "लॉगिन",
+    "signup": "साइन अप",
+    "logout": "लॉग आऊट",
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "confirmPassword": "पासवर्डची पुष्टी करा",
+    "forgotPassword": "पासवर्ड विसरलात?",
+    "dontHaveAccount": "खाते नाही?",
+    "alreadyHaveAccount": "आधीपासून खाते आहे?",
+    "signIn": "साइन इन करा",
+    "createAccount": "खाते तयार करा"
+  }
+}

@@ -1,28 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from "@/components/ui/button";
 import { Sprout, Shield, TrendingUp, ArrowRight } from 'lucide-react';
 import ThemeToggle from '@/components/ThemeToggle';
 import heroBackground from '@/assets/agri-hero-bg.jpg';
 
 const Index: React.FC = () => {
+  const { t } = useTranslation();
+
   return <div className="min-h-screen bg-gradient-to-br from-primary/10 via-accent/5 to-background">
       <nav className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Sprout className="w-8 h-8 text-primary" />
-            <span className="text-2xl font-bold text-primary">AgriShield</span>
+            <span className="text-2xl font-bold text-primary">{t('app.name')}</span>
           </div>
           <div className="flex items-center gap-4">
             <a href="#features" className="text-sm font-medium hover:text-primary transition-colors">
-              Features
+              {t('nav.features')}
             </a>
             <Link to="/about" className="text-sm font-medium hover:text-primary transition-colors">
-              About
+              {t('nav.about')}
             </Link>
             <ThemeToggle />
             <Link to="/login">
-              <Button className="bg-primary hover:bg-primary/90" size="sm">Login</Button>
+              <Button className="bg-primary hover:bg-primary/90" size="sm">{t('nav.login')}</Button>
             </Link>
           </div>
         </div>
@@ -36,14 +39,14 @@ const Index: React.FC = () => {
         </div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4 py-16 animate-fade-in">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-            Grow Smarter. Sell Safer.
+            {t('landing.hero.title')}
           </h1>
           <p className="text-xl text-white/90 mb-8 drop-shadow-md">
-            AI-powered yield optimization and price hedging platform for India's oilseed farmers
+            {t('landing.hero.subtitle')}
           </p>
           <Link to="/login">
             <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6 shadow-xl">
-              Start Your Journey <ArrowRight className="ml-2" />
+              {t('landing.hero.cta')} <ArrowRight className="ml-2" />
             </Button>
           </Link>
         </div>
@@ -54,18 +57,18 @@ const Index: React.FC = () => {
         <div id="features" className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="p-6 bg-white rounded-xl shadow-lg hover-lift">
             <Sprout className="w-12 h-12 text-primary mb-4" />
-            <h3 className="text-xl font-bold mb-2">Smart Yield Intelligence</h3>
-            <p className="text-muted-foreground">AI predictions, weather alerts, and personalized crop advisories</p>
+            <h3 className="text-xl font-bold mb-2">{t('landing.features.yieldIntelligence.title')}</h3>
+            <p className="text-muted-foreground">{t('landing.features.yieldIntelligence.description')}</p>
           </div>
           <div className="p-6 bg-white rounded-xl shadow-lg hover-lift">
             <TrendingUp className="w-12 h-12 text-primary mb-4" />
-            <h3 className="text-xl font-bold mb-2">Price Forecasting</h3>
-            <p className="text-muted-foreground">30 & 90-day market outlooks with AI insights</p>
+            <h3 className="text-xl font-bold mb-2">{t('landing.features.priceForecasting.title')}</h3>
+            <p className="text-muted-foreground">{t('landing.features.priceForecasting.description')}</p>
           </div>
           <div className="p-6 bg-white rounded-xl shadow-lg hover-lift">
             <Shield className="w-12 h-12 text-primary mb-4" />
-            <h3 className="text-xl font-bold mb-2">Virtual Hedging</h3>
-            <p className="text-muted-foreground">Lock prices and protect income with forward contracts</p>
+            <h3 className="text-xl font-bold mb-2">{t('landing.features.virtualHedging.title')}</h3>
+            <p className="text-muted-foreground">{t('landing.features.virtualHedging.description')}</p>
           </div>
         </div>
         
@@ -75,14 +78,14 @@ const Index: React.FC = () => {
           <div className="container relative z-10 px-4 text-center">
             <div className="max-w-3xl mx-auto animate-fade-in">
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                Ready to Transform Your Farming?
+                {t('landing.cta.title')}
               </h2>
               <p className="text-xl mb-8 text-white/90">
-                Join thousands of farmers who are already using AgriShield to optimize yields and protect their income.
+                {t('landing.cta.description')}
               </p>
               <Link to="/login">
                 <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-4 shadow-xl">
-                  Get Started Today <ArrowRight className="ml-2" />
+                  {t('landing.cta.button')} <ArrowRight className="ml-2" />
                 </Button>
               </Link>
             </div>

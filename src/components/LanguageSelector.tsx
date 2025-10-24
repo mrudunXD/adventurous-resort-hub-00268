@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Languages } from "lucide-react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useTranslation } from "react-i18next";
 import { useAuth } from "@/hooks/useAuth";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
@@ -36,10 +37,17 @@ const languages: Language[] = [
 const LanguageSelector = () => {
   const { user } = useAuth();
   const { toast } = useToast();
+  const { t, i18n } = useTranslation();
   const queryClient = useQueryClient();
   
-  const selectedLanguage = user?.preferredLanguage || "en";
+  const selectedLanguage = user?.preferredLanguage || i18n.language || "en";
   const currentLanguage = languages.find((l) => l.code === selectedLanguage);
+
+  useEffect(() => {
+    if (user?.preferredLanguage && i18n.language !== user.preferredLanguage) {
+      i18n.changeLanguage(user.preferredLanguage);
+    }
+  }, [user?.preferredLanguage, i18n]);
 
   const mutation = useMutation({
     mutationFn: async (language: string) => {
@@ -51,14 +59,14 @@ const LanguageSelector = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["/api/auth/user"] });
       toast({
-        title: "Language Updated",
-        description: "Your language preference has been saved.",
+        title: t('language.languageUpdated'),
+        description: t('language.languageSaved'),
       });
     },
     onError: (error) => {
       toast({
-        title: "Error",
-        description: "Failed to update language preference.",
+        title: t('language.error'),
+        description: t('language.errorUpdating'),
         variant: "destructive",
       });
       console.error("Error updating language:", error);
@@ -66,6 +74,7 @@ const LanguageSelector = () => {
   });
 
   const handleLanguageChange = (code: string) => {
+    i18n.changeLanguage(code);
     mutation.mutate(code);
   };
 
@@ -85,7 +94,7 @@ const LanguageSelector = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-48">
-        <DropdownMenuLabel>Select Language</DropdownMenuLabel>
+        <DropdownMenuLabel>{t('language.selectLanguage')}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuRadioGroup
           value={selectedLanguage}

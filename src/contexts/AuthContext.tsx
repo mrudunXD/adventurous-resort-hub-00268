@@ -7,6 +7,7 @@ export interface User {
   firstName: string;
   lastName: string;
   profileImageUrl?: string;
+  preferredLanguage?: string;
   createdAt: string;
 }
 
@@ -31,6 +32,7 @@ interface StoredUser {
   firstName: string;
   lastName: string;
   profileImageUrl?: string;
+  preferredLanguage?: string;
   createdAt: string;
 }
 
@@ -86,6 +88,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       firstName: foundUser.firstName,
       lastName: foundUser.lastName,
       profileImageUrl: foundUser.profileImageUrl,
+      preferredLanguage: foundUser.preferredLanguage,
       createdAt: foundUser.createdAt,
     };
 
@@ -131,6 +134,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       firstName: newUser.firstName,
       lastName: newUser.lastName,
       profileImageUrl: newUser.profileImageUrl,
+      preferredLanguage: newUser.preferredLanguage,
       createdAt: newUser.createdAt,
     };
 
