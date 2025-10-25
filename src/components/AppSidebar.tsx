@@ -8,7 +8,8 @@ import {
   GraduationCap,
   User,
   LogOut,
-  Home
+  Home,
+  Cloud
 } from "lucide-react";
 import {
   Sidebar,
@@ -26,6 +27,7 @@ const navItems = [
   { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
   { title: "Yield Intelligence", url: "/yield-intelligence", icon: Sprout },
   { title: "Market Forecast", url: "/market-forecast", icon: TrendingUp },
+  { title: "Weather Forecast", url: "/weather-forecast", icon: Cloud },
   { title: "Smart Hedging", url: "/hedging", icon: Shield },
   { title: "My Contracts", url: "/contracts", icon: FileText },
   { title: "Learning Center", url: "/learning", icon: GraduationCap },

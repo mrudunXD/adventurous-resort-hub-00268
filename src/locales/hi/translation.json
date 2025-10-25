@@ -14,7 +14,12 @@
     "hedging": "हेजिंग",
     "contracts": "अनुबंध",
     "learningCenter": "शिक्षा केंद्र",
-    "profile": "प्रोफ़ाइल"
+    "profile": "प्रोफ़ाइल",
+    "home": "होम",
+    "accommodation": "आवास",
+    "activities": "गतिविधियाँ",
+    "gallery": "गैलरी",
+    "contact": "संपर्क"
   },
   "common": {
     "loading": "लोड हो रहा है...",
@@ -28,7 +33,17 @@
     "close": "बंद करें",
     "viewDetails": "विवरण देखें",
     "getStarted": "शुरू करें",
-    "learnMore": "और जानें"
+    "learnMore": "और जानें",
+    "error": "त्रुटि",
+    "success": "सफलता"
+  },
+  "navbar": {
+    "callNow": "अभी कॉल करें",
+    "bookNow": "अभी बुक करें",
+    "search": "खोजें",
+    "searchAvailability": "उपलब्धता खोजें",
+    "openMenu": "मेनू खोलें",
+    "closeMenu": "मेनू बंद करें"
   },
   "landing": {
     "hero": {
@@ -57,7 +72,7 @@
     }
   },
   "dashboard": {
-    "welcome": "वापसी पर स्वागत है, किसान!",
+    "welcome": "स्वागत है, किसान!",
     "welcomeDescription": "आज आपके खेत में क्या हो रहा है",
     "yieldPotential": "उपज क्षमता",
     "yieldTarget": "लक्ष्य उपज का",
@@ -66,6 +81,17 @@
     "weather": "मौसम",
     "hedgeStatus": "हेज स्थिति",
     "recommendedHedge": "अनुशंसित हेज",
+    "sakhiAssistantTitle": "सखी वर्चुअल असिस्टेंट",
+    "sakhiAssistantDescription": "तुरंत कृषि परामर्श, अनुबंध सहायता और सलाह प्राप्त करें।",
+    "aiBadge": "एआई",
+    "sakhiStatusLabel": "असिस्टेंट स्थिति",
+    "sakhiActive": "सक्रिय",
+    "sakhiInactive": "निष्क्रिय",
+    "toggleSakhi": "सखी असिस्टेंट टॉगल करें",
+    "openSakhi": "सखी खोलें",
+    "sakhiPanelTitle": "सखी स्मार्ट असिस्टेंट",
+    "sakhiPanelDescription": "व्यक्तिगत अनुशंसाओं और सहायता के लिए सखी से चैट करें।",
+    "sakhiDisclaimer": "सखी परामर्श सुझाव देती है। कोई कदम उठाने से पहले विवेक का उपयोग करें।",
     "yieldIntelligenceTitle": "स्मार्ट उपज बुद्धिमत्ता",
     "yieldIntelligenceDesc": "वास्तविक समय फसल स्वास्थ्य विश्लेषण",
     "goodPlots": "अच्छे प्लॉट",
@@ -110,6 +136,49 @@
     "languageSaved": "आपकी भाषा प्राथमिकता सहेज ली गई है।",
     "error": "त्रुटि",
     "errorUpdating": "भाषा प्राथमिकता अपडेट करने में विफल।"
+  },
+  "footer": {
+    "resortName": "दांदेली एडवेंचर रिसॉर्ट्स",
+    "description": "प्रकृति के स्वर्ग के बीच रोमांच और शांति की दुनिया का अनुभव करें।",
+    "quickLinks": {
+      "title": "त्वरित लिंक",
+      "about": "हमारे बारे में",
+      "accommodation": "आवास",
+      "activities": "गतिविधियाँ",
+      "gallery": "गैलरी",
+      "contact": "संपर्क"
+    },
+    "contact": {
+      "title": "हमसे संपर्क करें",
+      "address": "दांदेली वन्यजीव अभयारण्य, कर्नाटक, भारत - 581325",
+      "primaryPhone": "+91 8277385225",
+      "secondaryPhone": "+91 7795601255",
+      "email": "dandeliadventure.info@gmail.com"
+    },
+    "newsletter": {
+      "title": "न्यूज़लेटर",
+      "description": "ताज़ा अपडेट और ऑफ़र के लिए हमारे न्यूज़लेटर की सदस्यता लें।",
+      "emailPlaceholder": "आपका ईमेल पता",
+      "submit": "सदस्यता लें",
+      "toast": {
+        "errorTitle": "त्रुटि",
+        "errorDescription": "कृपया अपना ईमेल पता दर्ज करें",
+        "successTitle": "सफलता!",
+        "successDescription": "आप हमारे न्यूज़लेटर की सदस्यता ले चुके हैं"
+      },
+      "dialog": {
+        "title": "सदस्यता पूरी!",
+        "heading": "सदस्यता लेने के लिए धन्यवाद!",
+        "body": "अब आपको हमारे नवीनतम अपडेट और विशेष ऑफ़र सीधे आपके इनबॉक्स में प्राप्त होंगे।",
+        "close": "बंद करें"
+      }
+    },
+    "socialAria": {
+      "instagram": "हमारा इंस्टाग्राम देखें",
+      "facebook": "हमारा फेसबुक देखें",
+      "twitter": "हमारा ट्विटर देखें"
+    },
+    "copyright": "© {{year}} दांदेली एडवेंचर रिसॉर्ट्स. सर्वाधिकार सुरक्षित।"
   },
   "auth": {
     "login": "लॉग इन",

@@ -22,18 +22,52 @@ export interface ProcessedResponse {
 // NLU - Intent classification (simplified for demo)
 function classifyIntent(text: string): string {
   const lowerText = text.toLowerCase();
-  
-  if (lowerText.match(/show|list|what.*field/i)) return 'ListFields';
-  if (lowerText.match(/add|register|new.*field/i)) return 'AddField';
-  if (lowerText.match(/predict|yield|harvest|how much/i)) return 'PredictYield';
-  if (lowerText.match(/scan|photo|pest|disease|leaf/i)) return 'ScanPhoto';
-  if (lowerText.match(/hedge|lock.*price|protect|forward/i)) return 'RecommendHedge';
-  if (lowerText.match(/create.*contract|yes.*create|confirm/i)) return 'CreateContract';
-  if (lowerText.match(/remind|reminder|schedule/i)) return 'SetReminder';
-  if (lowerText.match(/verify|proof|harvest/i)) return 'VerifyHarvest';
-  if (lowerText.match(/why|explain|reason/i)) return 'ExplainWhy';
-  if (lowerText.match(/help|human|officer|call/i)) return 'EscalateToHuman';
-  
+
+  if (/(^|\b)(hi|hello|hey|namaste)\b/.test(lowerText)) return 'Greeting';
+
+  if (/create\b.*contract|forward contract|confirm.*contract|lock price.*contract/.test(lowerText)) return 'CreateContract';
+  if (/(set|schedule)\b.*reminder|remind me\b/.test(lowerText)) return 'SetReminder';
+  if (/show\b.*reminder|upcoming reminders|turn off reminders|cancel.*reminder|change.*reminder|snooze.*reminder/.test(lowerText)) return 'ReminderManagement';
+
+  if (/(show|list)\b.*field|which fields|my fields\b/.test(lowerText)) return 'ListFields';
+
+  if (/add.*field|register.*field|draw.*field|upload.*boundary|update.*field|rename.*field|delete.*field|merge.*field|split.*field|soil test.*field|sowing date|set crop/.test(lowerText)) {
+    return 'FieldManagement';
+  }
+
+  if (/(predict|expected yield|how much.*harvest|harvest from|yield per hectare)/.test(lowerText)) return 'PredictYield';
+  if (/yield forecast|yield history|compare.*yield|confidence level|downside risk|simulate yield|why did you predict/.test(lowerText)) return 'YieldInsights';
+
+  if (/scan.*leaf|upload.*photo|identify.*pest|disease photo/.test(lowerText)) return 'ScanPhoto';
+  if (/pest|disease|aphids|fungus|spray|treatment|dose|outbreak|blight/.test(lowerText)) return 'PestDiseaseSupport';
+
+  if (/hedge|lock.*price|protect income|forward hedge/.test(lowerText)) return 'RecommendHedge';
+  if (/what is hedging|hedge percentage|settlement date|contract history|contract dispute|join fpo|fee for hedging|profit\/loss/.test(lowerText)) return 'HedgingFinance';
+
+  if (/verify|verification|proof|evidence|claim|incentive/.test(lowerText)) return 'VerificationSupport';
+
+  if (/weather|forecast|rain|heatwave|frost|drought|monsoon/.test(lowerText)) return 'WeatherAlerts';
+
+  if (/irrigat|soil moisture|water does field|postpone irrigation/.test(lowerText)) return 'IrrigationSupport';
+
+  if (/fertilizer|urea|dap|n\/p\/k|micronutrient|organic fertilizer|fertilizer cost|soil health card/.test(lowerText)) return 'FertilizerSoil';
+
+  if (/seed variety|buy seed|certified seed|hybrid seed|seed quantity|seed cost|subsidized seeds|store seeds/.test(lowerText)) return 'SeedsInputs';
+
+  if (/what should i do this week|step-by-step plan|planting schedule|spacing between rows|labour will i need|cheapest source of quality seed/.test(lowerText)) return 'AgronomyAdvice';
+
+  if (/price|sell my harvest|mandi|buyer|price trends|highest price|distress sale|notify me when price/.test(lowerText)) return 'MarketPrices';
+
+  if (/wallet balance|payment|payout|bank account|invoice|auto-payout/.test(lowerText)) return 'PaymentSupport';
+
+  if (/extension officer|pilot program|report a problem|claim subsidy|agri center|fpo contact|contract dispute|appeal/.test(lowerText)) return 'AdminSupport';
+
+  if (/teach me|learn about|short video|best practices|checklist|simple explanation/.test(lowerText)) return 'LearningResources';
+
+  if (/app|crash|notifications|clear cache|update the app|can't login|can't log in|can't sign in/.test(lowerText)) return 'Troubleshooting';
+
+  if (/help|human|officer|call/.test(lowerText)) return 'EscalateToHuman';
+
   return 'Unknown';
 }
 
@@ -66,6 +100,24 @@ async function generateResponse(intent: string, slots: Record<string, string>, c
   const messageId = Date.now().toString();
   
   switch (intent) {
+    case 'Greeting':
+      return {
+        message: {
+          id: messageId,
+          sender: 'sakhi',
+          text: `Namaste! I'm Sakhi, your farm assistant. I can help you manage fields, predict yield, track prices, and much more.
+
+Here are a few things you can ask:
+• "Show my fields"
+• "Predict yield for Field A"
+• "What is today's mustard price?"
+• "Set reminder to irrigate Field B"`,
+          timestamp: new Date(),
+          quickActions: ['Show my fields', 'Predict yield for Field A', 'Market prices', 'Set reminder']
+        },
+        requiresConsent: false
+      };
+
     case 'ListFields':
       return {
         message: {
@@ -80,6 +132,24 @@ async function generateResponse(intent: string, slots: Record<string, string>, c
 Which field would you like to know more about?`,
           timestamp: new Date(),
           quickActions: ['Predict yield for Field A', 'Check Field B health', 'Scan photo']
+        },
+        requiresConsent: false
+      };
+
+    case 'FieldManagement':
+      return {
+        message: {
+          id: messageId,
+          sender: 'sakhi',
+          text: `I can help you manage field records. Tell me which field and the task you need.
+
+Common actions:
+1. Register or draw a new field boundary
+2. Update crop, sowing date, or acreage
+3. Merge, split, or delete a field
+4. Attach soil tests or harvest status`,
+          timestamp: new Date(),
+          quickActions: ['Add a new field', 'Update field area', 'Change sowing date', 'Add soil test']
         },
         requiresConsent: false
       };
@@ -109,6 +179,24 @@ Would you like me to recommend a hedging strategy?`,
         requiresConsent: false
       };
 
+    case 'YieldInsights':
+      return {
+        message: {
+          id: messageId,
+          sender: 'sakhi',
+          text: `Here is how I analyse yield trends:
+
+• Historical comparison: Year-over-year yield, weather, and input usage
+• Risk scenarios: downside risk bands and confidence intervals
+• What-if tools: simulate rainfall, fertilizer, or sowing date changes
+
+Would you like a detailed report for a specific field?`,
+          timestamp: new Date(),
+          quickActions: ['Show yield history', 'Explain prediction confidence', 'Simulate rainfall impact']
+        },
+        requiresConsent: false
+      };
+
     case 'ScanPhoto':
       return {
         message: {
@@ -132,6 +220,24 @@ Would you like me to set a spray reminder?`,
         requiresConsent: false
       };
 
+    case 'PestDiseaseSupport':
+      return {
+        message: {
+          id: messageId,
+          sender: 'sakhi',
+          text: `To control pests and diseases I need to know:
+
+• Crop and growth stage
+• Symptoms or photos
+• Recent sprays and weather conditions
+
+I can recommend scouting steps, treatment doses, and safe spray timings.`,
+          timestamp: new Date(),
+          quickActions: ['Scan this leaf', 'Recommended pesticide', 'Set spray reminder']
+        },
+        requiresConsent: false
+      };
+
     case 'RecommendHedge':
       return {
         message: {
@@ -150,6 +256,23 @@ Would you like me to set a spray reminder?`,
 Would you like me to create a forward contract?`,
           timestamp: new Date(),
           quickActions: ['Yes, create contract', 'Explain more', 'No thanks']
+        },
+        requiresConsent: false
+      };
+
+    case 'HedgingFinance':
+      return {
+        message: {
+          id: messageId,
+          sender: 'sakhi',
+          text: `I can guide you on hedging and contracts:
+
+• Explain hedging concepts and risks
+• Show active or past forward contracts
+• Simulate profit/loss for different hedge percentages
+• Connect you with FPO pooling options`,
+          timestamp: new Date(),
+          quickActions: ['What is hedging?', 'Show my active contracts', 'Simulate profit/loss', 'Join FPO pooling']
         },
         requiresConsent: false
       };
@@ -204,6 +327,22 @@ Is there anything else I can help with?`,
         requiresConsent: false
       };
 
+    case 'ReminderManagement':
+      return {
+        message: {
+          id: messageId,
+          sender: 'sakhi',
+          text: `Here are your reminder options:
+
+• View upcoming reminders for sprays, irrigation, or harvest
+• Edit time, snooze, or cancel a reminder
+• Turn reminders off for a specific field`,
+          timestamp: new Date(),
+          quickActions: ['Show my upcoming reminders', 'Change reminder time', 'Cancel reminder']
+        },
+        requiresConsent: false
+      };
+
     case 'VerifyHarvest':
       return {
         message: {
@@ -219,6 +358,189 @@ To settle your contract, I need:
 Please upload a photo of your harvest to begin verification.`,
           timestamp: new Date(),
           quickActions: ['Upload photo', 'Request extension visit', 'View contract']
+        },
+        requiresConsent: false
+      };
+
+    case 'VerificationSupport':
+      return {
+        message: {
+          id: messageId,
+          sender: 'sakhi',
+          text: `Verification support includes:
+
+1. Uploading photo or satellite proof
+2. Tracking claim / incentive status
+3. Resubmitting evidence after rejection
+4. Coordinating extension officer visits`,
+          timestamp: new Date(),
+          quickActions: ['Upload verification photo', 'Check claim status', 'Resubmit evidence', 'Contact extension officer']
+        },
+        requiresConsent: false
+      };
+
+    case 'WeatherAlerts':
+      return {
+        message: {
+          id: messageId,
+          sender: 'sakhi',
+          text: `Weather dashboard highlights:
+
+• 7-day forecast for each field
+• Rain, heatwave, frost, and drought alerts
+• Spray suitability windows and irrigation guidance
+
+Would you like me to send alerts when rain is expected?`,
+          timestamp: new Date(),
+          quickActions: ['Show 7-day weather', 'Notify me about rain', 'Best spray window']
+        },
+        requiresConsent: false
+      };
+
+    case 'IrrigationSupport':
+      return {
+        message: {
+          id: messageId,
+          sender: 'sakhi',
+          text: `I monitor soil moisture, crop stage, and forecast to advise irrigation.
+
+Ask me to:
+• Calculate water requirement per field
+• Schedule and remind irrigation events
+• Delay irrigation if rainfall is expected`,
+          timestamp: new Date(),
+          quickActions: ['Water requirement for Field A', 'Schedule irrigation', 'Delay due to rain']
+        },
+        requiresConsent: false
+      };
+
+    case 'FertilizerSoil':
+      return {
+        message: {
+          id: messageId,
+          sender: 'sakhi',
+          text: `Fertilizer planner covers:
+
+• Soil test interpretation and missing nutrients
+• N/P/K dose, micronutrients, and organic options
+• Cost-saving tips and irrigation timing after application`,
+          timestamp: new Date(),
+          quickActions: ['Recommend fertilizer for groundnut', 'Explain soil health card', 'Suggest organic options']
+        },
+        requiresConsent: false
+      };
+
+    case 'SeedsInputs':
+      return {
+        message: {
+          id: messageId,
+          sender: 'sakhi',
+          text: `Seed advisory can help you:
+
+• Compare varieties for oil content and climate
+• Estimate seed quantity and cost by acreage
+• Locate certified or subsidised suppliers
+• Learn safe storage practices`,
+          timestamp: new Date(),
+          quickActions: ['Best seed for my soil', 'Estimate seed quantity', 'Find certified seed', 'Seed storage tips']
+        },
+        requiresConsent: false
+      };
+
+    case 'AgronomyAdvice':
+      return {
+        message: {
+          id: messageId,
+          sender: 'sakhi',
+          text: `Here's how I build weekly agronomy plans:
+
+• Crop stage-wise tasks (fertilizer, irrigation, protection)
+• Labour estimates and scheduling
+• Weather-adjusted recommendations and step-by-step guides`,
+          timestamp: new Date(),
+          quickActions: ['This week’s tasks', 'Step-by-step plan for Field A', 'Adjust sowing date']
+        },
+        requiresConsent: false
+      };
+
+    case 'MarketPrices':
+      return {
+        message: {
+          id: messageId,
+          sender: 'sakhi',
+          text: `Market intelligence provides:
+
+• Live mandi prices and buyer contacts
+• 30 & 90-day price forecasts
+• Price alerts to avoid distress sales
+• Best time-to-sell guidance`,
+          timestamp: new Date(),
+          quickActions: ['Today’s mandi price', '30-day price forecast', 'Set price alert', 'Nearby buyers']
+        },
+        requiresConsent: false
+      };
+
+    case 'PaymentSupport':
+      return {
+        message: {
+          id: messageId,
+          sender: 'sakhi',
+          text: `Wallet & payouts support includes:
+
+• Viewing balances and settlement timelines
+• Requesting payouts to bank account or UPI
+• Downloading invoices and payment history
+• Enabling auto-payout on settlement`,
+          timestamp: new Date(),
+          quickActions: ['Show wallet balance', 'Request payout', 'Payout history', 'Enable auto-payout']
+        },
+        requiresConsent: false
+      };
+
+    case 'AdminSupport':
+      return {
+        message: {
+          id: messageId,
+          sender: 'sakhi',
+          text: `I can connect you with support teams:
+
+• Extension officer calls or field visits
+• Pilot programs, subsidies, and grievance redressal
+• Reporting app issues or contract disputes`,
+          timestamp: new Date(),
+          quickActions: ['Contact extension officer', 'Report a problem', 'Request field visit', 'Claim subsidy help']
+        },
+        requiresConsent: false
+      };
+
+    case 'LearningResources':
+      return {
+        message: {
+          id: messageId,
+          sender: 'sakhi',
+          text: `Learning library offers:
+
+• Bite-sized explainers on hedging, pests, soil, and more
+• Videos, checklists, and best-practice guides
+• Region-specific recommendations and FAQs`,
+          timestamp: new Date(),
+          quickActions: ['Teach me about hedging', 'Fertilizer timing video', 'Sowing checklist', 'Soil test guide']
+        },
+        requiresConsent: false
+      };
+
+    case 'Troubleshooting':
+      return {
+        message: {
+          id: messageId,
+          sender: 'sakhi',
+          text: `Let’s fix app issues together:
+
+• Login problems, crashes, or missing notifications
+• Language change, cache refresh, or updates
+• Upload and prediction troubleshooting`,
+          timestamp: new Date(),
+          quickActions: ['App not uploading photo', 'Change language', 'Refresh app data', 'Update the app']
         },
         requiresConsent: false
       };
@@ -295,16 +617,9 @@ What would you like to try?`,
   }
 }
 
-// Main processor
 export async function processUserMessage(text: string, context: Message[]): Promise<ProcessedResponse> {
-  // Classify intent
   const intent = classifyIntent(text);
-  
-  // Extract slots
   const slots = extractSlots(text, intent);
-  
-  // Generate response
   const response = await generateResponse(intent, slots, context);
-  
   return response;
 }

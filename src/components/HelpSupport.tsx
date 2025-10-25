@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { HelpCircle, Phone, MessageCircle, Video, FileQuestion } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,20 +11,22 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const HelpSupport = () => {
+  const navigate = useNavigate();
+
   const handleContactSupport = () => {
-    console.log("Opening contact support...");
+    navigate("/support/contact");
   };
 
   const handleFAQs = () => {
-    console.log("Opening FAQs...");
+    navigate("/support/faqs");
   };
 
   const handleTutorials = () => {
-    console.log("Opening tutorials...");
+    navigate("/support/tutorials");
   };
 
   const handleEmergencyHelpline = () => {
-    console.log("Dialing emergency helpline...");
+    window.open("tel:+918001234567");
   };
 
   return (
