@@ -6,25 +6,6 @@ AgriShield is a comprehensive web application designed to empower India's oilsee
 
 Built as a single-page application (SPA) using React with TypeScript, the platform emphasizes accessibility through multilingual support, mobile-responsive design, and an intuitive user interface tailored for agricultural communities.
 
-## Recent Changes
-
-**October 23, 2025 - Migration to Replit & Enhanced Topbar**
-- Successfully migrated project from Lovable to Replit environment
-- Configured Vite to run on 0.0.0.0:5000 for Replit compatibility
-- Enhanced AppLayout topbar with comprehensive feature set:
-  - Live market ticker with real-time price updates and trend indicators
-  - Advanced notification center with categorized alerts (weather, price, hedge, contracts, learning)
-  - User profile dropdown with avatar, farmer info, and account management
-  - Multi-language selector supporting 9 Indian languages
-  - Quick search functionality with navigation to contracts, learning modules, and market data
-  - Help & support center with FAQs, contact support, and video tutorials
-  - Theme toggle for light/dark mode support
-  - Fully responsive design with mobile-optimized components
-
-## User Preferences
-
-Preferred communication style: Simple, everyday language.
-
 ## System Architecture
 
 ### Frontend Architecture
